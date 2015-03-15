@@ -36,8 +36,6 @@
     NSLog(@"Current Traversal started");
     
     [self traverseNode:root];
-
-    [self deleteNode:root andData:root.data];
     
     [self reverseLinkList:root];
     
