@@ -20,13 +20,18 @@
     
     [super viewDidLoad];
     
-
+    // creating 10 nodes
     for (int index = 0; index < 10; index++) {
 
         [self insertNode:root withData:arc4random() % 10000];
         
     }
     
+/*      
+        arc4random() return a random number
+        arc4random() % 10000 return a random number from 0 - 10000
+
+*/
     NSLog(@"Current Traversal started");
     
     [self traverseNode:root];
