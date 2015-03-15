@@ -27,15 +27,18 @@
         
     }
     
-/*      
+    /*
         arc4random() return a random number
         arc4random() % 10000 return a random number from 0 - 10000
 
-*/
+     */
+    
     NSLog(@"Current Traversal started");
     
     [self traverseNode:root];
 
+    [self deleteNode:root andData:root.data];
+    
     [self reverseLinkList:root];
     
     NSLog(@" Reversing LinkList Traversal started");
