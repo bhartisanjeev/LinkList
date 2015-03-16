@@ -13,6 +13,10 @@
 
     Node    *root ; // to keep track of root node
     Node    *newRoot ; // keep track of new root while reversing a linklist
+    
+    //animation label
+    IBOutlet    UILabel *lblSingleHeaderLinkList ;
+    
 }
 
 // all linklist operations

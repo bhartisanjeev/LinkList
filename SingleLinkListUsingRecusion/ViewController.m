@@ -11,6 +11,8 @@
 @interface ViewController ()
 
 - (Node *)createNewNodeAndData:(int)data ;
+- (void)animateLabel:(UILabel *)label ;
+- (void)scaleLabelWithScale:(float)scaleX andScaleY:(float)scaleY andAlpha:(float)alphaValue ;
 
 @end
 
@@ -139,6 +141,32 @@
     node.data   = data ;
     node.next   = NULL ;
     return node ;
+}
+
+- (void)animateLabel:(UILabel *)label {
+    
+    [UIView animateWithDuration:1.5f animations:^{
+        
+        [self scaleLabelWithScale:1.6f andScaleY:1.6f andAlpha:1.0f];
+        
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:1.5f animations:^{
+            
+            [self scaleLabelWithScale:1.0f andScaleY:1.0f andAlpha:0.2f];
+            
+        } completion:^(BOOL finished) {
+            
+            [self animateLabel:label];
+            
+        }];
+    }];
+}
+
+- (void)scaleLabelWithScale:(float)scaleX andScaleY:(float)scaleY andAlpha:(float)alphaValue{
+    
+    lblSingleHeaderLinkList.transform = CGAffineTransformMakeScale(scaleX, scaleY) ;
+    lblSingleHeaderLinkList.alpha = alphaValue ;
 }
 
 
