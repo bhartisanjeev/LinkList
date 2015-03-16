@@ -22,6 +22,8 @@
     
     [super viewDidLoad];
     
+    [self animateLabel:lblSingleHeaderLinkList];
+    
     // creating 10 nodes
     for (int index = 0; index < 10; index++) {
 
